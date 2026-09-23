@@ -86,8 +86,14 @@ function Contact() {
               {offices.map(([name, email, phone]) => (
                 <li key={name} className="py-4">
                   <p className="text-sm font-bold">{name}</p>
-                  <p className="mt-1 text-xs text-navy/65">{email}</p>
-                  <p className="text-xs text-navy/65">{phone}</p>
+                  <p className="mt-1 flex items-center gap-2 text-xs text-navy/65">
+                    <Mail className="size-3.5 shrink-0" aria-hidden />
+                    {email}
+                  </p>
+                  <p className="mt-1 flex items-center gap-2 text-xs text-navy/65">
+                    <Phone className="size-3.5 shrink-0" aria-hidden />
+                    {phone}
+                  </p>
                 </li>
               ))}
             </ul>
