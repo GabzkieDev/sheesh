@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Kolehiyo ng Heneral Santos: campus address at the Civic Center, General Santos City, office hours, phone and email.",
+          "Contact Kolehiyo ng Heneral Santos: Purok Maliwanag, Barangay Calumpang, General Santos City, office hours, email and Facebook page.",
       },
       { property: "og:title", content: "Contact — Kolehiyo ng Heneral Santos" },
       {
