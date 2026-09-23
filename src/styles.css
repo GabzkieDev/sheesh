@@ -19,6 +19,15 @@
  */
 
 @theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-silver: var(--silver);
+  --color-gold: var(--gold);
+  --color-paper: var(--paper);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +35,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -141,4 +151,61 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+/* Kolehiyo ng Heneral Santos brand tokens (derived from the official seal) */
+:root {
+  --radius: 0.25rem;
+  --navy: oklch(0.32 0.14 268);
+  --navy-deep: oklch(0.24 0.11 268);
+  --silver: oklch(0.91 0.01 250);
+  --gold: oklch(0.78 0.16 70);
+  --paper: oklch(0.99 0.002 250);
+
+  --background: var(--paper);
+  --foreground: var(--navy);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--navy);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--navy);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.99 0.002 250);
+  --secondary: var(--silver);
+  --secondary-foreground: var(--navy);
+  --muted: oklch(0.96 0.005 250);
+  --muted-foreground: oklch(0.52 0.05 268);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy-deep);
+  --border: oklch(0.32 0.14 268 / 12%);
+  --input: oklch(0.32 0.14 268 / 18%);
+  --ring: var(--navy);
+}
+
+@keyframes entrance-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes seal-grow {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@utility animate-entrance {
+  animation: entrance-fade 0.8s var(--ease-out-expo) both;
+}
+
+@utility animate-seal {
+  animation: seal-grow 1.2s var(--ease-out-expo) both;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
