@@ -20,9 +20,18 @@ export function SiteFooter() {
               Heneral Santos
             </h2>
             <div className="space-y-4 text-xs font-medium text-primary-foreground/60">
-              <p>Civic Center, General Santos City, South Cotabato, Philippines 9500</p>
-              <p>admissions@khs.edu.ph</p>
-              <p>+63 (083) 552 4000</p>
+              <p>Purok Maliwanag, Barangay Calumpang, General Santos City, Philippines 9500</p>
+              <p>kolehiyodeheneral@gmail.com</p>
+              <p>
+                <a
+                  href="https://www.facebook.com/kolehiyoNgHeneralSantos"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-gold/50 underline-offset-4 hover:text-gold"
+                >
+                  facebook.com/kolehiyoNgHeneralSantos
+                </a>
+              </p>
             </div>
           </div>
 
