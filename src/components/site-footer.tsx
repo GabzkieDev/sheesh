@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Facebook, Mail, MapPin } from "lucide-react";
 import seal from "@/assets/khs-seal.png.asset.json";
 
 export function SiteFooter() {
