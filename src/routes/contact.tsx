@@ -40,26 +40,36 @@ function Contact() {
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
           <div>
             <h2 className="mb-4 font-display text-xl">Campus</h2>
-            <p className="text-sm leading-relaxed text-navy/75">
-              Purok Maliwanag, Barangay Calumpang
-              <br />
-              General Santos City, Philippines 9500
+            <p className="flex items-start gap-3 text-sm leading-relaxed text-navy/75">
+              <MapPin className="mt-0.5 size-4 shrink-0 text-navy" aria-hidden />
+              <span>
+                Purok Maliwanag, Barangay Calumpang
+                <br />
+                General Santos City, Philippines 9500
+              </span>
             </p>
             <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
               Online
             </h3>
-            <p className="text-sm text-navy/75">
-              kolehiyodeheneral@gmail.com
-              <br />
-              <a
-                href="https://www.facebook.com/kolehiyoNgHeneralSantos"
-                target="_blank"
-                rel="noreferrer"
-                className="underline decoration-gold underline-offset-4 hover:text-navy"
-              >
-                facebook.com/kolehiyoNgHeneralSantos
-              </a>
-            </p>
+            <div className="space-y-2 text-sm text-navy/75">
+              <p className="flex items-center gap-3">
+                <Mail className="size-4 shrink-0 text-navy" aria-hidden />
+                <a href="mailto:kolehiyodeheneral@gmail.com" className="hover:text-navy">
+                  kolehiyodeheneral@gmail.com
+                </a>
+              </p>
+              <p className="flex items-center gap-3">
+                <Facebook className="size-4 shrink-0 text-navy" aria-hidden />
+                <a
+                  href="https://www.facebook.com/kolehiyoNgHeneralSantos"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-navy"
+                >
+                  facebook.com/kolehiyoNgHeneralSantos
+                </a>
+              </p>
+            </div>
             <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
               Office hours
             </h3>
