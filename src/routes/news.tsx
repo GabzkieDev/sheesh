@@ -25,7 +25,7 @@ const items = [
     date: "September 15, 2026",
     tag: "Campus",
     title: "Official campus groundbreaking ceremony for the Centennial Building",
-    body: "City officials and the college community gathered at the Civic Center site for the ceremonial torch-lighting and groundbreaking of the first permanent academic building.",
+    body: "City officials and the college community gathered at the Calumpang campus site for the ceremonial torch-lighting and groundbreaking of the first permanent academic building.",
   },
   {
     date: "September 10, 2026",

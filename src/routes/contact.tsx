@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Kolehiyo ng Heneral Santos: campus address at the Civic Center, General Santos City, office hours, phone and email.",
+          "Contact Kolehiyo ng Heneral Santos: Purok Maliwanag, Barangay Calumpang, General Santos City, office hours, email and Facebook page.",
       },
       { property: "og:title", content: "Contact — Kolehiyo ng Heneral Santos" },
       {
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const offices = [
-  ["Office of Admissions", "admissions@khs.edu.ph", "+63 (083) 552 4000"],
-  ["Office of the Registrar", "registrar@khs.edu.ph", "+63 (083) 552 4001"],
-  ["Student Affairs", "osa@khs.edu.ph", "+63 (083) 552 4002"],
+  ["Office of Admissions", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4000"],
+  ["Office of the Registrar", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4001"],
+  ["Student Affairs", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4002"],
 ];
 
 function Contact() {
@@ -32,7 +32,7 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Visit or write to us"
-        lead="The college holds office at the Civic Center, General Santos City. Walk-in inquiries are welcome during office hours."
+        lead="The college holds office at Purok Maliwanag, Barangay Calumpang, General Santos City. Walk-in inquiries are welcome during office hours."
       />
 
       <section className="px-6 py-14">
@@ -40,9 +40,24 @@ function Contact() {
           <div>
             <h2 className="mb-4 font-display text-xl">Campus</h2>
             <p className="text-sm leading-relaxed text-navy/75">
-              Civic Center, General Santos City
+              Purok Maliwanag, Barangay Calumpang
               <br />
-              South Cotabato, Philippines 9500
+              General Santos City, Philippines 9500
+            </p>
+            <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
+              Online
+            </h3>
+            <p className="text-sm text-navy/75">
+              kolehiyodeheneral@gmail.com
+              <br />
+              <a
+                href="https://www.facebook.com/kolehiyoNgHeneralSantos"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-gold underline-offset-4 hover:text-navy"
+              >
+                facebook.com/kolehiyoNgHeneralSantos
+              </a>
             </p>
             <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
               Office hours

@@ -182,7 +182,7 @@ function Home() {
             className="aspect-video w-full rounded-sm object-cover"
           />
           <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
-            Main campus — Civic Center, General Santos City
+            Main campus — Purok Maliwanag, Barangay Calumpang, General Santos City
           </p>
         </div>
       </section>

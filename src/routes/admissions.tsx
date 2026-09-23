@@ -21,7 +21,7 @@ export const Route = createFileRoute("/admissions")({
 });
 
 const steps = [
-  ["01", "Secure an application form", "Available at the Office of Admissions, Civic Center campus, or downloadable once the portal opens."],
+  ["01", "Secure an application form", "Available at the Office of Admissions, Calumpang campus, or downloadable once the portal opens."],
   ["02", "Submit your requirements", "Complete documents are screened on the spot before an exam permit is issued."],
   ["03", "Take the entrance examination", "Scheduled in batches; bring your permit and a valid ID."],
   ["04", "Interview and evaluation", "Program chairs interview qualified examinees."],
