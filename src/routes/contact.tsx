@@ -32,7 +32,7 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Visit or write to us"
-        lead="The college holds office at the Civic Center, General Santos City. Walk-in inquiries are welcome during office hours."
+        lead="The college holds office at Purok Maliwanag, Barangay Calumpang, General Santos City. Walk-in inquiries are welcome during office hours."
       />
 
       <section className="px-6 py-14">
