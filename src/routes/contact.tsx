@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 
 export const Route = createFileRoute("/contact")({
