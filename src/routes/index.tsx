@@ -3,6 +3,8 @@ import seal from "@/assets/khs-seal.png.asset.json";
 import campus from "@/assets/campus.jpg";
 import lab from "@/assets/lab.jpg";
 import engineering from "@/assets/engineering.jpg";
+import campusReal from "@/assets/campus-real.jpg.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,15 +62,21 @@ const bulletin = [
 function Home() {
   return (
     <main>
-      <header className="relative overflow-hidden border-b border-navy/5 px-6 pb-16 pt-12 text-center">
-        <div className="mx-auto max-w-3xl">
+      <header className="relative overflow-hidden px-6 pb-20 pt-14 text-center">
+        <img
+          src={campusReal.url}
+          alt="Kolehiyo ng Heneral Santos campus building"
+          className="absolute inset-0 size-full object-cover"
+        />
+        <div className="absolute inset-0 bg-navy-deep/80" />
+        <div className="relative mx-auto max-w-3xl text-primary-foreground">
           <div className="mb-8 flex animate-seal justify-center">
             <img
               src={seal.url}
               alt="Official seal of Kolehiyo ng Heneral Santos"
               width={224}
               height={224}
-              className="size-40 md:size-56"
+              className="size-40 drop-shadow-2xl md:size-56"
             />
           </div>
 
@@ -77,7 +85,7 @@ function Home() {
               Kolehiyo ng <br />
               Heneral Santos
             </h1>
-            <p className="mb-8 text-sm font-medium uppercase tracking-[0.2em] text-navy/60">
+            <p className="mb-8 text-sm font-medium uppercase tracking-[0.2em] text-primary-foreground/70">
               Learning Without Limits <span className="mx-2 text-gold">/</span> Growing Without
               Bounds
             </p>
@@ -85,14 +93,14 @@ function Home() {
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 to="/admissions"
-                className="flex items-center justify-center gap-2 rounded-sm bg-navy px-8 py-4 text-sm font-semibold tracking-wide text-primary-foreground shadow-xl shadow-navy/10 transition-transform active:scale-[0.98]"
+                className="flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-navy-deep shadow-xl shadow-navy-deep/30 transition-transform active:scale-[0.98]"
               >
                 Admissions 2026
-                <span className="size-1 rounded-full bg-gold" />
+                <span className="size-1 rounded-full bg-navy-deep" />
               </Link>
               <Link
                 to="/programs"
-                className="rounded-sm border border-navy/20 px-8 py-4 text-sm font-semibold tracking-wide text-navy active:bg-navy/5"
+                className="rounded-sm border border-primary-foreground/30 px-8 py-4 text-sm font-semibold tracking-wide text-primary-foreground backdrop-blur-sm active:bg-primary-foreground/10"
               >
                 Our Programs
               </Link>
@@ -100,6 +108,7 @@ function Home() {
           </div>
         </div>
       </header>
+
 
       <section className="overflow-hidden bg-navy py-6 text-primary-foreground">
         <div className="animate-entrance overflow-x-auto [animation-delay:400ms]">
