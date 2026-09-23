@@ -21,9 +21,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const offices = [
-  ["Office of Admissions", "admissions@khs.edu.ph", "+63 (083) 552 4000"],
-  ["Office of the Registrar", "registrar@khs.edu.ph", "+63 (083) 552 4001"],
-  ["Student Affairs", "osa@khs.edu.ph", "+63 (083) 552 4002"],
+  ["Office of Admissions", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4000"],
+  ["Office of the Registrar", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4001"],
+  ["Student Affairs", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4002"],
 ];
 
 function Contact() {
