@@ -19,8 +19,9 @@ export const Route = createFileRoute("/programs")({
       },
     ],
   }),
-  component: Programs;
+  component: Programs,
 });
+
 
 const featured = [
   {

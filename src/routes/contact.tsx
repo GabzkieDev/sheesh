@@ -1,0 +1,84 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/page-hero";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact — Kolehiyo ng Heneral Santos" },
+      {
+        name: "description",
+        content:
+          "Contact Kolehiyo ng Heneral Santos: campus address at the Civic Center, General Santos City, office hours, phone and email.",
+      },
+      { property: "og:title", content: "Contact — Kolehiyo ng Heneral Santos" },
+      {
+        property: "og:description",
+        content: "Reach the Admissions Office, Registrar and Student Affairs of the college.",
+      },
+    ],
+  }),
+  component: Contact,
+});
+
+const offices = [
+  ["Office of Admissions", "admissions@khs.edu.ph", "+63 (083) 552 4000"],
+  ["Office of the Registrar", "registrar@khs.edu.ph", "+63 (083) 552 4001"],
+  ["Student Affairs", "osa@khs.edu.ph", "+63 (083) 552 4002"],
+];
+
+function Contact() {
+  return (
+    <main>
+      <PageHero
+        eyebrow="Contact"
+        title="Visit or write to us"
+        lead="The college holds office at the Civic Center, General Santos City. Walk-in inquiries are welcome during office hours."
+      />
+
+      <section className="px-6 py-14">
+        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="mb-4 font-display text-xl">Campus</h2>
+            <p className="text-sm leading-relaxed text-navy/75">
+              Civic Center, General Santos City
+              <br />
+              South Cotabato, Philippines 9500
+            </p>
+            <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
+              Office hours
+            </h3>
+            <p className="text-sm text-navy/75">
+              Monday to Friday, 8:00 AM – 5:00 PM
+              <br />
+              Saturday, 8:00 AM – 12:00 NN (exam days only)
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-4 font-display text-xl">Offices</h2>
+            <ul className="divide-y divide-navy/10 border-y border-navy/10">
+              {offices.map(([name, email, phone]) => (
+                <li key={name} className="py-4">
+                  <p className="text-sm font-bold">{name}</p>
+                  <p className="mt-1 text-xs text-navy/65">{email}</p>
+                  <p className="text-xs text-navy/65">{phone}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-silver/30 px-6 py-14">
+        <div className="mx-auto max-w-3xl">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">Note</p>
+          <p className="mt-3 text-sm leading-relaxed text-navy/75">
+            The contact details, dates and announcements on this website are sample content. Send me
+            the college's real address, phone numbers, email and announcements and I will replace
+            them.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+}
