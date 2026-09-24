@@ -38,16 +38,7 @@ const featured = [
   },
 ];
 
-const catalogue = [
-  ["BS Fisheries", "Capture fisheries, aquaculture, post-harvest processing"],
-  ["BS Industrial Engineering", "Operations, quality systems, plant management"],
-  ["BS Information Technology", "Software development, networks, data systems"],
-  ["BS Business Administration", "Marketing management, financial management"],
-  ["BS Accountancy", "Financial accounting, audit, taxation"],
-  ["Bachelor of Public Administration", "Local governance, policy, public finance"],
-  ["Bachelor of Elementary Education", "Generalist track with practicum in city schools"],
-  ["BS Criminology", "Law enforcement administration and forensic science"],
-];
+import { courses } from "@/lib/courses";
 
 function Programs() {
   return (
@@ -90,10 +81,19 @@ function Programs() {
           </div>
 
           <ul className="divide-y divide-navy/10 border-y border-navy/10">
-            {catalogue.map(([name, detail]) => (
-              <li key={name} className="flex flex-col gap-1 py-4">
-                <span className="text-sm font-bold">{name}</span>
-                <span className="text-xs text-navy/60">{detail}</span>
+            {courses.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  to="/courses/$slug"
+                  params={{ slug: c.slug }}
+                  className="group flex items-center justify-between gap-4 py-4"
+                >
+                  <span className="flex flex-col gap-1">
+                    <span className="text-sm font-bold transition-colors group-hover:text-gold">{c.name}</span>
+                    <span className="text-xs text-navy/60">{c.short}</span>
+                  </span>
+                  <span className="text-navy/40 transition-transform group-hover:translate-x-1">→</span>
+                </Link>
               </li>
             ))}
           </ul>
