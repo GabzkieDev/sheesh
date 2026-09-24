@@ -86,6 +86,8 @@ function Programs() {
                 <Link
                   to="/courses/$slug"
                   params={{ slug: c.slug }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between gap-4 py-4"
                 >
                   <span className="flex flex-col gap-1">
