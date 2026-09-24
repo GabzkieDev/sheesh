@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { PageHero } from "@/components/page-hero";
 import { getCourse } from "@/lib/courses";
+import { courseImages } from "@/lib/course-images";
 
 export const Route = createFileRoute("/courses/$slug")({
   loader: ({ params }) => {
@@ -59,7 +59,26 @@ function CoursePage() {
   const { course } = Route.useLoaderData();
   return (
     <main>
-      <PageHero eyebrow={course.college} title={course.name} lead={course.overview} />
+      <header className="relative overflow-hidden px-6 pb-16 pt-20">
+        <img
+          src={courseImages[course.slug]}
+          alt={course.name}
+          width={1600}
+          height={912}
+          className="absolute inset-0 size-full object-cover"
+        />
+        <div className="absolute inset-0 bg-navy-deep/80" />
+        <div className="relative mx-auto max-w-3xl animate-entrance text-primary-foreground">
+          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">
+            {course.college}
+          </p>
+          <h1 className="mb-4 font-display text-4xl leading-[1.1] tracking-tight text-balance md:text-5xl">
+            {course.name}
+          </h1>
+          <div className="mb-6 h-1 w-12 bg-gold" />
+          <p className="max-w-[60ch] text-sm leading-relaxed text-primary-foreground/80">{course.overview}</p>
+        </div>
+      </header>
       <section className="bg-silver/30 px-6 py-14">
         <div className="mx-auto max-w-5xl">
           <div className="mb-8 flex flex-wrap gap-8 border-b border-navy/10 pb-6">
