@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import seal from "@/assets/khs-seal.png.asset.json";
 import campusMain from "@/assets/campus-main.jpg.asset.json";
-import lab from "@/assets/lab.jpg";
-import engineering from "@/assets/engineering.jpg";
+import agribusiness from "@/assets/courses/bs-agribusiness.jpg";
+import beced from "@/assets/courses/beced.jpg";
 import campusReal from "@/assets/campus-real.jpg.asset.json";
 
 
@@ -28,16 +28,16 @@ export const Route = createFileRoute("/")({
 
 const pillars = [
   {
-    image: lab,
-    tag: "College of Science",
-    title: "Aquatic Resources & Fisheries",
-    body: "Building global leaders for the sustainable future of General Santos City's primary industry.",
+    image: agribusiness,
+    tag: "College of Agriculture",
+    title: "BS Agribusiness",
+    body: "The science and business of agriculture — from crop production to farm enterprise management in SOCCSKSARGEN.",
   },
   {
-    image: engineering,
-    tag: "College of Technology",
-    title: "Mechanical & Industrial Engineering",
-    body: "Innovative solutions for industrial growth and urban infrastructure excellence.",
+    image: beced,
+    tag: "College of Education",
+    title: "Bachelor of Early Childhood Education",
+    body: "Preparing teachers of young learners through child development, play-based learning and early literacy.",
   },
 ];
 
