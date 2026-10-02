@@ -42,8 +42,8 @@ const items = [
   {
     date: "August 12, 2026",
     tag: "Partnership",
-    title: "College signs agreement with local fishing and canning industry",
-    body: "The partnership provides on-the-job training slots and equipment support for the fisheries and industrial engineering programs.",
+    title: "College signs agreement with local farms and agri-enterprises",
+    body: "The partnership provides on-the-job training slots and equipment support for the BS Agribusiness program.",
   },
 ];
 
