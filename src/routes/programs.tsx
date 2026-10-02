@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import lab from "@/assets/lab.jpg";
-import engineering from "@/assets/engineering.jpg";
+import agribusiness from "@/assets/courses/bs-agribusiness.jpg";
+import beced from "@/assets/courses/beced.jpg";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/programs")({
       {
         name: "description",
         content:
-          "Degree programs at Kolehiyo ng Heneral Santos: fisheries and aquatic resources, engineering and technology, business, education and public administration.",
+          "Degree programs at Kolehiyo ng Heneral Santos: BS Agribusiness, Bachelor of Physical Education and Bachelor of Early Childhood Education.",
       },
       { property: "og:title", content: "Academic Programs — Kolehiyo ng Heneral Santos" },
       {
@@ -25,16 +25,16 @@ export const Route = createFileRoute("/programs")({
 
 const featured = [
   {
-    image: lab,
-    tag: "College of Science",
-    title: "Aquatic Resources & Fisheries",
-    body: "Building global leaders for the sustainable future of General Santos City's primary industry.",
+    image: agribusiness,
+    tag: "College of Agriculture",
+    title: "BS Agribusiness",
+    body: "The science and business of agriculture — from crop production to farm enterprise management in SOCCSKSARGEN.",
   },
   {
-    image: engineering,
-    tag: "College of Technology",
-    title: "Mechanical & Industrial Engineering",
-    body: "Innovative solutions for industrial growth and urban infrastructure excellence.",
+    image: beced,
+    tag: "College of Education",
+    title: "Bachelor of Early Childhood Education",
+    body: "Preparing teachers of young learners through child development, play-based learning and early literacy.",
   },
 ];
 
@@ -46,7 +46,7 @@ function Programs() {
       <PageHero
         eyebrow="Academics"
         title="Academic Pillars"
-        lead="Every program is designed with the industries of General Santos City — fishing, agro-industry, logistics, public service — so graduates can step straight into work that matters here."
+        lead="Every program prepares graduates for the needs of General Santos City — agriculture, education and community service — so they can step straight into work that matters here."
       />
 
       <section className="px-6 py-14">
