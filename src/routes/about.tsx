@@ -52,8 +52,8 @@ function About() {
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-5xl">
           <img
-            src={campus}
-            alt="Campus of Kolehiyo ng Heneral Santos"
+            src={campusMain.url}
+            alt="Students and faculty of Kolehiyo ng Heneral Santos in front of the main campus building"
             width={1600}
             height={900}
             loading="lazy"
