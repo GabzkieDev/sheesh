@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import seal from "@/assets/khs-seal.png.asset.json";
-import campus from "@/assets/campus.jpg";
+import campusMain from "@/assets/campus-main.jpg.asset.json";
 import lab from "@/assets/lab.jpg";
 import engineering from "@/assets/engineering.jpg";
 import campusReal from "@/assets/campus-real.jpg.asset.json";
@@ -174,8 +174,8 @@ function Home() {
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-5xl">
           <img
-            src={campus}
-            alt="Main campus entrance of Kolehiyo ng Heneral Santos"
+            src={campusMain.url}
+            alt="Students and faculty of Kolehiyo ng Heneral Santos in front of the main campus building"
             width={1600}
             height={900}
             loading="lazy"
