@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import seal from "@/assets/khs-seal.png.asset.json";
-import campus from "@/assets/campus.jpg";
+import campusMain from "@/assets/campus-main.jpg.asset.json";
 import lab from "@/assets/lab.jpg";
 import engineering from "@/assets/engineering.jpg";
 import campusReal from "@/assets/campus-real.jpg.asset.json";
