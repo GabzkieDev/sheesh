@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import seal from "@/assets/khs-seal.png.asset.json";
-import campusMain from "@/assets/campus-main.jpg.asset.json";
-import agribusiness from "@/assets/courses/bs-agribusiness.jpg";
-import beced from "@/assets/courses/beced.jpg";
-import campusReal from "@/assets/campus-real.jpg.asset.json";
+import { courseImage, useContent } from "@/lib/site-content";
 
 
 export const Route = createFileRoute("/")({
@@ -26,45 +23,16 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const pillars = [
-  {
-    image: agribusiness,
-    tag: "College of Agriculture",
-    title: "BS Agribusiness",
-    body: "The science and business of agriculture — from crop production to farm enterprise management in SOCCSKSARGEN.",
-  },
-  {
-    image: beced,
-    tag: "College of Education",
-    title: "Bachelor of Early Childhood Education",
-    body: "Preparing teachers of young learners through child development, play-based learning and early literacy.",
-  },
-];
-
-const bulletin = [
-  {
-    date: "September 15, 2026",
-    text: "Official campus groundbreaking ceremony for the Centennial Building.",
-    accent: true,
-  },
-  {
-    date: "September 10, 2026",
-    text: "Now accepting scholarship applications for Academic Year 2026–2027.",
-    accent: false,
-  },
-  {
-    date: "August 28, 2026",
-    text: "Entrance examination schedules released for first-year applicants.",
-    accent: false,
-  },
-];
-
 function Home() {
+  const images = useContent("images");
+  const pillars = useContent("courses").slice(0, 2).map((c) => ({ image: courseImage(c), tag: c.college, title: c.name, body: c.short }));
+  const bulletin = useContent("news").slice(0, 3).map((n, i) => ({ date: n.date, text: n.title, accent: i === 0 }));
+  const contact = useContent("contact");
   return (
     <main>
       <header className="relative overflow-hidden px-6 pb-20 pt-14 text-center">
         <img
-          src={campusReal.url}
+          src={images.heroBg}
           alt="Kolehiyo ng Heneral Santos campus building"
           className="absolute inset-0 size-full object-cover"
         />
@@ -174,7 +142,7 @@ function Home() {
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-5xl">
           <img
-            src={campusMain.url}
+            src={images.campusMain}
             alt="Students and faculty of Kolehiyo ng Heneral Santos in front of the main campus building"
             width={1600}
             height={900}
@@ -182,7 +150,7 @@ function Home() {
             className="aspect-video w-full rounded-sm object-cover"
           />
           <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
-            Main campus — Purok Maliwanag, Barangay Calumpang, General Santos City
+            Main campus — {contact.address}
           </p>
         </div>
       </section>
@@ -197,7 +165,7 @@ function Home() {
           <div className="space-y-4">
             {bulletin.map((b) => (
               <div
-                key={b.text}
+                key={b.text + b.date}
                 className={`border-l-4 bg-card p-5 shadow-sm ${b.accent ? "border-navy" : "border-silver"}`}
               >
                 <span className="mb-2 block font-mono text-[10px] text-navy/40">

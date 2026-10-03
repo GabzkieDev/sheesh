@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import agribusiness from "@/assets/courses/bs-agribusiness.jpg";
-import beced from "@/assets/courses/beced.jpg";
+import { courseImage, useContent } from "@/lib/site-content";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -23,24 +22,9 @@ export const Route = createFileRoute("/programs")({
 });
 
 
-const featured = [
-  {
-    image: agribusiness,
-    tag: "College of Agriculture",
-    title: "BS Agribusiness",
-    body: "The science and business of agriculture — from crop production to farm enterprise management in SOCCSKSARGEN.",
-  },
-  {
-    image: beced,
-    tag: "College of Education",
-    title: "Bachelor of Early Childhood Education",
-    body: "Preparing teachers of young learners through child development, play-based learning and early literacy.",
-  },
-];
-
-import { courses } from "@/lib/courses";
-
 function Programs() {
+  const courses = useContent("courses");
+  const featured = courses.slice(0, 2).map((c) => ({ image: courseImage(c), tag: c.college, title: c.name, body: c.short }));
   return (
     <main>
       <PageHero

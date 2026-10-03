@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import campusMain from "@/assets/campus-main.jpg.asset.json";
+import { useContent } from "@/lib/site-content";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -21,13 +21,14 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const values = [
-  { k: "Mission", v: "To deliver accessible, tuition-free higher education that answers the real needs of General Santos City's industries and communities." },
-  { k: "Vision", v: "A city college recognized across Mindanao for competent graduates, honest service, and research rooted in local life." },
-  { k: "Mandate", v: "Established in 2025 by the City Government of General Santos as its own institution of higher learning." },
-];
-
 function About() {
+  const about = useContent("about");
+  const images = useContent("images");
+  const values = [
+    { k: "Mission", v: about.mission },
+    { k: "Vision", v: about.vision },
+    { k: "Mandate", v: about.mandate },
+  ];
   return (
     <main>
       <PageHero
@@ -52,7 +53,7 @@ function About() {
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-5xl">
           <img
-            src={campusMain.url}
+            src={images.campusMain}
             alt="Students and faculty of Kolehiyo ng Heneral Santos in front of the main campus building"
             width={1600}
             height={900}
