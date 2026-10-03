@@ -81,7 +81,10 @@ function Login() {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (username.trim() !== ADMIN_USERNAME) return toast.error("Wrong username or password");
+    if (username.trim() !== ADMIN_USERNAME) {
+      toast.error("Wrong username or password");
+      return;
+    }
     setBusy(true);
     try {
       if (first) {
@@ -134,7 +137,10 @@ function useSave<K extends ContentKey>(key: K) {
     const { error } = await supabase
       .from("site_content")
       .upsert({ key, value: value as never, updated_at: new Date().toISOString() });
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     qc.setQueryData(contentQueryKey(key), value);
     toast.success("Saved");
   };
