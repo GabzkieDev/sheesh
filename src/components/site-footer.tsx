@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Mail, MapPin } from "lucide-react";
 import seal from "@/assets/khs-seal.png.asset.json";
+import { useContent } from "@/lib/site-content";
 
 export function SiteFooter() {
+  const c = useContent("contact");
   return (
     <footer className="bg-navy px-8 pb-8 pt-16 text-primary-foreground">
       <div className="mx-auto max-w-5xl">
@@ -23,23 +25,23 @@ export function SiteFooter() {
             <div className="space-y-4 text-xs font-medium text-primary-foreground/60">
               <p className="flex items-start gap-3">
                 <MapPin className="mt-px size-4 shrink-0 text-gold" aria-hidden />
-                <span>Purok Maliwanag, Barangay Calumpang, General Santos City, Philippines 9500</span>
+                <span>{c.address}</span>
               </p>
               <p className="flex items-start gap-3">
                 <Mail className="mt-px size-4 shrink-0 text-gold" aria-hidden />
-                <a href="mailto:kolehiyodeheneral@gmail.com" className="hover:text-gold">
-                  kolehiyodeheneral@gmail.com
+                <a href={`mailto:${c.email}`} className="hover:text-gold">
+                  {c.email}
                 </a>
               </p>
               <p className="flex items-start gap-3">
                 <Facebook className="mt-px size-4 shrink-0 text-gold" aria-hidden />
                 <a
-                  href="https://www.facebook.com/kolehiyoNgHeneralSantos"
+                  href={c.facebook}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-gold"
                 >
-                  facebook.com/kolehiyoNgHeneralSantos
+                  {c.facebook.replace(/^https?:\/\/(www\.)?/, "")}
                 </a>
               </p>
             </div>

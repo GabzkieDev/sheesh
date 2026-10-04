@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { useContent } from "@/lib/site-content";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -21,13 +22,9 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const offices = [
-  ["Office of Admissions", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4000"],
-  ["Office of the Registrar", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4001"],
-  ["Student Affairs", "kolehiyodeheneral@gmail.com", "+63 (083) 552 4002"],
-];
 
 function Contact() {
+  const c = useContent("contact");
   return (
     <main>
       <PageHero
@@ -42,11 +39,7 @@ function Contact() {
             <h2 className="mb-4 font-display text-xl">Campus</h2>
             <p className="flex items-start gap-3 text-sm leading-relaxed text-navy/75">
               <MapPin className="mt-0.5 size-4 shrink-0 text-navy" aria-hidden />
-              <span>
-                Purok Maliwanag, Barangay Calumpang
-                <br />
-                General Santos City, Philippines 9500
-              </span>
+              <span>{c.address}</span>
             </p>
             <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
               Online
@@ -54,36 +47,32 @@ function Contact() {
             <div className="space-y-2 text-sm text-navy/75">
               <p className="flex items-center gap-3">
                 <Mail className="size-4 shrink-0 text-navy" aria-hidden />
-                <a href="mailto:kolehiyodeheneral@gmail.com" className="hover:text-navy">
-                  kolehiyodeheneral@gmail.com
+                <a href={`mailto:${c.email}`} className="hover:text-navy">
+                  {c.email}
                 </a>
               </p>
               <p className="flex items-center gap-3">
                 <Facebook className="size-4 shrink-0 text-navy" aria-hidden />
                 <a
-                  href="https://www.facebook.com/kolehiyoNgHeneralSantos"
+                  href={c.facebook}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-navy"
                 >
-                  facebook.com/kolehiyoNgHeneralSantos
+                  {c.facebook.replace(/^https?:\/\/(www\.)?/, "")}
                 </a>
               </p>
             </div>
             <h3 className="mt-8 mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">
               Office hours
             </h3>
-            <p className="text-sm text-navy/75">
-              Monday to Friday, 8:00 AM – 5:00 PM
-              <br />
-              Saturday, 8:00 AM – 12:00 NN (exam days only)
-            </p>
+            <p className="whitespace-pre-line text-sm text-navy/75">{c.hours}</p>
           </div>
 
           <div>
             <h2 className="mb-4 font-display text-xl">Offices</h2>
             <ul className="divide-y divide-navy/10 border-y border-navy/10">
-              {offices.map(([name, email, phone]) => (
+              {c.offices.map(({ name, email, phone }) => (
                 <li key={name} className="py-4">
                   <p className="text-sm font-bold">{name}</p>
                   <p className="mt-1 flex items-center gap-2 text-xs text-navy/65">
@@ -101,16 +90,6 @@ function Contact() {
         </div>
       </section>
 
-      <section className="bg-silver/30 px-6 py-14">
-        <div className="mx-auto max-w-3xl">
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-navy/40">Note</p>
-          <p className="mt-3 text-sm leading-relaxed text-navy/75">
-            The contact details, dates and announcements on this website are sample content. Send me
-            the college's real address, phone numbers, email and announcements and I will replace
-            them.
-          </p>
-        </div>
-      </section>
     </main>
   );
 }
