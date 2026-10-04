@@ -1,14 +1,13 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { getCourse } from "@/lib/courses";
-import { courseImages } from "@/lib/course-images";
+import { courseImage, useContent } from "@/lib/site-content";
 
 export const Route = createFileRoute("/courses/$slug")({
   loader: ({ params }) => {
-    const course = getCourse(params.slug);
-    if (!course) throw notFound();
-    return { course };
+    return { course: getCourse(params.slug) ?? null, slug: params.slug };
   },
   head: ({ loaderData }) => {
+    if (!loaderData?.course) return { meta: [{ title: "Program — Kolehiyo ng Heneral Santos" }] };
     if (!loaderData) return { meta: [{ title: "Course not found" }, { name: "robots", content: "noindex" }] };
     const c = loaderData.course;
     const title = `${c.name} — Kolehiyo ng Heneral Santos`;
@@ -56,12 +55,14 @@ function List({ title, items }: { title: string; items: string[] }) {
 }
 
 function CoursePage() {
-  const { course } = Route.useLoaderData();
+  const { slug } = Route.useLoaderData();
+  const course = useContent("courses").find((c) => c.slug === slug);
+  if (!course) return <CourseNotFound />;
   return (
     <main>
       <header className="relative overflow-hidden px-6 pb-16 pt-20">
         <img
-          src={courseImages[course.slug]}
+          src={courseImage(course)}
           alt={course.name}
           width={1600}
           height={912}
