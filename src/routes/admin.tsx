@@ -75,7 +75,7 @@ function Login() {
   const status = useServerFn(getAdminStatus);
   const setup = useServerFn(setupAdmin);
   const { data, refetch } = useQuery({ queryKey: ["admin-status"], queryFn: () => status() });
-  const [username, setUsername] = useState(ADMIN_USERNAME);
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const first = data && !data.exists;
