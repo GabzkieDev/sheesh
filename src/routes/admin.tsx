@@ -135,7 +135,7 @@ function Login() {
         <div className="relative mt-1">
           <input
             type={showPw ? "text" : "password"}
-            className={`${input} rounded-lg pr-10`}
+            className={`${signInInput} pr-10`}
             value={password}
             minLength={8}
             required
