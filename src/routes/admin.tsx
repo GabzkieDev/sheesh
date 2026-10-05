@@ -4,6 +4,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState, type ReactNode } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import seal from "@/assets/khs-seal.png.asset.json";
 import { ADMIN_EMAIL, ADMIN_USERNAME, getAdminStatus, setupAdmin } from "@/lib/admin.functions";
 import {
   contentQueryKey,
@@ -102,8 +103,11 @@ function Login() {
 
   return (
     <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 rounded-sm bg-card p-8 shadow-sm">
-      <h1 className="font-display text-2xl">Admin sign in</h1>
-      <div className="h-1 w-10 bg-gold" />
+      <div className="flex flex-col items-center gap-3 text-center">
+        <img src={seal.url} alt="Official seal of Kolehiyo ng Heneral Santos" className="size-20" />
+        <h1 className="font-display text-2xl">Admin Portal</h1>
+        <div className="h-1 w-10 bg-gold" />
+      </div>
       {first && (
         <p className="text-xs text-navy/70">
           First-time setup: choose a password (at least 8 characters) for the admin account.
