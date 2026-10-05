@@ -106,7 +106,7 @@ function Login() {
   };
 
   const signInBtn =
-    "w-full rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-50";
+    "w-full rounded-[0.75rem] bg-navy px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-50";
 
   return (
     <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 rounded-[1rem] bg-card p-8 shadow-sm">
