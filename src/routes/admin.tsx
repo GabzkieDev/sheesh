@@ -101,8 +101,10 @@ function Login() {
     }
   };
 
+  const [showPw, setShowPw] = useState(false);
+
   return (
-    <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 rounded-sm bg-card p-8 shadow-sm">
+    <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 rounded-2xl bg-card p-8 shadow-sm">
       <div className="flex flex-col items-center gap-3 text-center">
         <img src={seal.url} alt="Official seal of Kolehiyo ng Heneral Santos" className="size-20" />
         <h1 className="font-display text-2xl">Admin Portal</h1>
@@ -115,20 +117,37 @@ function Login() {
       )}
       <label className="block text-xs font-semibold">
         Username
-        <input className={`${input} mt-1`} value={username} onChange={(e) => setUsername(e.target.value)} placeholder="" autoComplete="off" />
+        <input
+          className={`${input} mt-1 rounded-lg`}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+          autoComplete="off"
+        />
       </label>
       <label className="block text-xs font-semibold">
         Password
-        <input
-          type="password"
-          className={`${input} mt-1`}
-          value={password}
-          minLength={8}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="relative mt-1">
+          <input
+            type={showPw ? "text" : "password"}
+            className={`${input} rounded-lg pr-10`}
+            value={password}
+            minLength={8}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button
+            type="button"
+            aria-label={showPw ? "Hide password" : "Show password"}
+            onClick={() => setShowPw((s) => !s)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-navy/60 hover:text-navy"
+          >
+            {showPw ? <EyeOff size={16} aria-hidden /> : <Eye size={16} aria-hidden />}
+          </button>
+        </div>
       </label>
-      <button className={`${btn} w-full`} disabled={busy}>
+      <button className={`${btn} w-full rounded-lg`} disabled={busy}>
         {busy ? "Please wait…" : first ? "Create admin & sign in" : "Sign in"}
       </button>
     </form>
