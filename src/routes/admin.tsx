@@ -105,7 +105,8 @@ function Login() {
     }
   };
 
-  const [showPw, setShowPw] = useState(false);
+  const signInBtn =
+    "w-full rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-50";
 
   return (
     <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 rounded-2xl bg-card p-8 shadow-sm">
