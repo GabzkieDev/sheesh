@@ -152,7 +152,7 @@ function Login() {
           </button>
         </div>
       </label>
-      <button className={`${btn} w-full rounded-lg`} disabled={busy}>
+      <button className={signInBtn} disabled={busy}>
         {busy ? "Please wait…" : first ? "Create admin & sign in" : "Sign in"}
       </button>
     </form>
