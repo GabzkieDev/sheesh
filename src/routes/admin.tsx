@@ -81,7 +81,7 @@ function Login() {
   const [busy, setBusy] = useState(false);
   const [showPw, setShowPw] = useState(false);
   const signInInput =
-    "w-full rounded-lg border border-navy/20 bg-card px-3 py-2 text-sm text-navy outline-none focus:border-gold";
+    "w-full rounded-[0.75rem] border border-navy/20 bg-card px-3 py-2 text-sm text-navy outline-none focus:border-gold";
   const first = data && !data.exists;
 
   const submit = async (e: React.FormEvent) => {
