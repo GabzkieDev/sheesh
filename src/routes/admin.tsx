@@ -123,7 +123,7 @@ function Login() {
       <label className="block text-xs font-semibold">
         Username
         <input
-          className={`${input} mt-1 rounded-lg`}
+          className={`${signInInput} mt-1`}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
