@@ -75,7 +75,7 @@ function Login() {
   const status = useServerFn(getAdminStatus);
   const setup = useServerFn(setupAdmin);
   const { data, refetch } = useQuery({ queryKey: ["admin-status"], queryFn: () => status() });
-  const [username, setUsername] = useState(ADMIN_USERNAME);
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const first = data && !data.exists;
@@ -115,7 +115,7 @@ function Login() {
       )}
       <label className="block text-xs font-semibold">
         Username
-        <input className={`${input} mt-1`} value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input className={`${input} mt-1`} value={username} onChange={(e) => setUsername(e.target.value)} placeholder="" autoComplete="off" />
       </label>
       <label className="block text-xs font-semibold">
         Password
